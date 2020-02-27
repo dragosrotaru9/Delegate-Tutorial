@@ -1,35 +1,35 @@
 import UIKit
 
-//MARK: step 1 Add Protocol here
-
 class ClassBVC: UIViewController {
     
-    @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var secondView: UIView!
-//MARK: step 2 Create a delegate property here, don't forget to make it weak!
-
-
+    @IBOutlet weak var cyanButton: UIButton!
+    @IBOutlet weak var brownButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstView.backgroundColor = .cyan
-        firstView.layer.borderColor = UIColor.white.cgColor
-        firstView.layer.borderWidth = 2.0
-        firstView.layer.cornerRadius = firstView.frame.width / 2
-        firstView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
-        secondView.backgroundColor = .brown
-        secondView.layer.borderColor = UIColor.white.cgColor
-        secondView.layer.borderWidth = 2.0
-        secondView.layer.cornerRadius = secondView.frame.width / 2
-        secondView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))
-
-    }
-    @IBAction func dismissView(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true)
+        customizeTaps()
     }
     
-    @objc func handleTap(_ tapGesture: UITapGestureRecognizer) {
-        
-        view.backgroundColor = tapGesture.view?.backgroundColor
-        //MARK: step 3 Add the delegate method call here
+    @IBAction func setCyanColor(_ sender: UIButton) {
+        //change color of previous screen to cyan
+    }
+    
+    @IBAction func setBrownColor(_ sender: UIButton) {
+        //change color of previous screen to brown
+    }
+    
+    func customizeTaps() {
+        cyanButton.backgroundColor = .cyan
+        cyanButton.layer.borderColor = UIColor.white.cgColor
+        cyanButton.layer.borderWidth = 2.0
+        cyanButton.layer.cornerRadius = cyanButton.frame.width / 2
+        brownButton.backgroundColor = .brown
+        brownButton.layer.borderColor = UIColor.white.cgColor
+        brownButton.layer.borderWidth = 2.0
+        brownButton.layer.cornerRadius = brownButton.frame.width / 2
+    }
+    
+    @IBAction func dismissView(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true)
     }
 }

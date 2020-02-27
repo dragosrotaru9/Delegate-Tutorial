@@ -1,22 +1,17 @@
 import UIKit
 
-//MARK: step 4 adopt the protocol here
 class ClassAVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func goToBScreen(_ sender: Any) {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BViewController") as? ClassBVC else {
+            return
+        }
         
-    //MARK: step 5 create a reference of Class B and bind them through the prepareforsegue method
-
+        self.navigationController?.present(viewController, animated: true)
     }
-    
-    //MARK: step 6 finally use the method of the contract here
-
-    
-
 }
 
