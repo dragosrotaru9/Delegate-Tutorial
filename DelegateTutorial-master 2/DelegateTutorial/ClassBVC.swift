@@ -7,7 +7,7 @@ class ClassBVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeTaps()
+        customizeButtons()
     }
     
     @IBAction func setCyanColor(_ sender: UIButton) {
@@ -18,7 +18,7 @@ class ClassBVC: UIViewController {
         //change color of previous screen to brown
     }
     
-    func customizeTaps() {
+    func customizeButtons() {
         cyanButton.backgroundColor = .cyan
         cyanButton.layer.borderColor = UIColor.white.cgColor
         cyanButton.layer.borderWidth = 2.0
